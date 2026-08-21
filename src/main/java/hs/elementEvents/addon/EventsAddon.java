@@ -1,7 +1,6 @@
 package hs.elementEvents.addon;
 
 import hs.elementEvents.ElementEvents;
-import hs.elementEvents.element.StormElement;
 import hs.elementSMPRefined.API.ElementApi;
 import hs.elementSMPRefined.API.addon.ElementAddon;
 import hs.elementSMPRefined.ElementSMPRefined;
@@ -26,7 +25,6 @@ public final class EventsAddon implements ElementAddon {
     @Override
     public void register(ElementSMPRefined plugin) {
         ElementApi api = plugin.getElementApi();
-        api.registerElement(new StormElement(plugin));
 
         // One-time / event elements go here, e.g.:
         // api.registerElement(new StormElement(plugin));

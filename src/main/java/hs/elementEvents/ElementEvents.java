@@ -1,10 +1,10 @@
-package net.saturn.elementEvents;
+package hs.elementEvents;
 
+import hs.elementEvents.addon.EventsAddon;
 import hs.elementSMPRefined.ElementSMPRefined;
-import net.pumpkinn.elementevents.addon.EventsAddon;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class ElementEventsPlugin extends JavaPlugin {
+public final class ElementEvents extends JavaPlugin {
 
     private ElementSMPRefined core;
 
@@ -18,7 +18,7 @@ public final class ElementEventsPlugin extends JavaPlugin {
         }
 
         this.core = refined;
-        core.getAddonManager().register(new EventsAddon(this, core));
+        core.getAddonManager().register(new EventsAddon(this));
 
         getLogger().info("ElementEvents enabled, hooked into ElementSMPRefined.");
     }

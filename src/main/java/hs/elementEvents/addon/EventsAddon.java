@@ -1,9 +1,10 @@
-package net.pumpkinn.elementevents.addon;
+package hs.elementEvents.addon;
 
+import hs.elementEvents.ElementEvents;
+import hs.elementEvents.element.StormElement;
+import hs.elementSMPRefined.API.ElementApi;
 import hs.elementSMPRefined.API.addon.ElementAddon;
 import hs.elementSMPRefined.ElementSMPRefined;
-import net.pumpkinn.elementevents.ElementEventsPlugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * Entry point registered with ElementSMPRefined's AddonManager. Everything
@@ -11,12 +12,10 @@ import org.bukkit.plugin.java.JavaPlugin;
  * gets wired up from {@link #register}.
  */
 public final class EventsAddon implements ElementAddon {
-    private final ElementEventsPlugin plugin;
-    private final ElementSMPRefined core;
+    private final ElementEvents plugin;
 
-    public EventsAddon(ElementEventsPlugin plugin, ElementSMPRefined core) {
+    public EventsAddon(ElementEvents plugin) {
         this.plugin = plugin;
-        this.core = core;
     }
 
     @Override
@@ -26,13 +25,14 @@ public final class EventsAddon implements ElementAddon {
 
     @Override
     public void register(ElementSMPRefined plugin) {
-        var addonManager = plugin.getAddonManager();
+        ElementApi api = plugin.getElementApi();
+        api.registerElement(new StormElement(plugin));
 
         // One-time / event elements go here, e.g.:
-        // addonManager.registerElement(new StormElement(this.plugin));
+        // api.registerElement(new StormElement(plugin));
 
         // Altar listeners (structure detection, collection interactions), e.g.:
-        // addonManager.registerListener("altar-listener", new AltarListener(this.plugin, core));
+        // api.registerListener("altar-listener", new AltarListener(this.plugin, plugin));
 
         // Custom event dimension, once you've generated/loaded the world, e.g.:
         // addonManager.registerDimension(

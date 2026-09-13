@@ -1,7 +1,7 @@
-package hs.elementEvents;
+package net.rose.elementEvents;
 
-import hs.elementEvents.addon.EventsAddon;
-import hs.elementSMPRefined.ElementSMPRefined;
+import net.rose.elementEvents.addon.EventsAddon;
+import rose.elementSMPRefined.ElementSMPRefined;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ElementEvents extends JavaPlugin {

@@ -1,6 +1,6 @@
 name: ElementEvents
 version: '1.0-SNAPSHOT'
-main: hs.elementEvents.ElementEvents
+main: net.rose.elementEvents.ElementEvents
 api-version: '1.21'
 load: STARTUP
 depend: [ ElementSMPRefined ]

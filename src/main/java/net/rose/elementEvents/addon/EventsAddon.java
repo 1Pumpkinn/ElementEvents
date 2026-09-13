@@ -1,9 +1,8 @@
-package hs.elementEvents.addon;
+package net.rose.elementEvents.addon;
 
-import hs.elementEvents.ElementEvents;
-import hs.elementSMPRefined.API.ElementApi;
-import hs.elementSMPRefined.API.addon.ElementAddon;
-import hs.elementSMPRefined.ElementSMPRefined;
+import net.rose.elementEvents.ElementEvents;
+import rose.elementSMPRefined.API.ElementApi;
+import rose.elementSMPRefined.API.addon.ElementAddon;
 
 /**
  * Entry point registered with ElementSMPRefined's AddonManager. Everything
@@ -23,17 +22,15 @@ public final class EventsAddon implements ElementAddon {
     }
 
     @Override
-    public void register(ElementSMPRefined plugin) {
-        ElementApi api = plugin.getElementApi();
-
+    public void register(ElementApi api) {
         // One-time / event elements go here, e.g.:
         // api.registerElement(new StormElement(plugin));
 
         // Altar listeners (structure detection, collection interactions), e.g.:
-        // api.registerListener("altar-listener", new AltarListener(this.plugin, plugin));
+        // api.registerListener("altar-listener", new AltarListener(plugin, api));
 
         // Custom event dimension, once you've generated/loaded the world, e.g.:
-        // addonManager.registerDimension(
+        // api.registerDimension(
         //         NamespacedKey.fromString("elementevents:event_realm"),
         //         Bukkit.getWorld("event_realm"));
     }
